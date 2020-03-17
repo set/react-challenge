@@ -2,7 +2,7 @@ import Layout from '../layout';
 import React, { Component } from 'react';
 
 class Index extends Component {
-  render(){
+  render() {
     return (
       <Layout>
         <h1>Burası index</h1>
