@@ -1,6 +1,7 @@
 node_modules
 .idea
-.vscode
 .next
+dist
+.vscode
 package-lock.json
 yarn.lock
