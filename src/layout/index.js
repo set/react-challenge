@@ -30,7 +30,31 @@ class Layout extends Component {
         {this.props.children}
 
         <footer>
-
+          <div className="container">
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Collection Statement</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Manage Account</a></li>
+              </ul>
+            </nav>
+            <p>Copyright 2016 DEMO Streaming. All Right Reserved</p>
+            <div className="social">
+              <div className="media-links">
+                <a href="#"><img src="/images/social/facebook-white.svg" alt=""/></a>
+                <a href="#"><img src="/images/social/twitter-white.svg" alt=""/></a>
+                <a href="#"><img src="/images/social/instagram-white.svg" alt=""/></a>
+              </div>
+              <div className="downloads">
+                <a href="#"><img src="/images/store/play-store.svg" alt=""/></a>
+                <a href="#"><img src="/images/store/app-store.svg" alt=""/></a>
+                <a href="#"><img src="/images/store/windows-store.svg" alt=""/></a>
+              </div>
+            </div>
+          </div>
         </footer>
       </div>
     );

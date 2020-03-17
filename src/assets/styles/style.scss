@@ -49,3 +49,63 @@ nav.page-title {
     }
   }
 }
+
+footer {
+  margin-top: 30px;
+  background: $secondary;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    p {
+      color: #fff;
+      opacity: .7;
+    }
+    nav {
+      margin-bottom: 20px;
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 20px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            color: #fff;
+            opacity: .7;
+            transition: .3s;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .social {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .media-links {
+        a {
+          margin-right: 20px;
+          img {
+            height: 25px;
+          }
+        }
+      }
+      .downloads {
+        a {
+          margin-left: 20px;
+          img {
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+}
