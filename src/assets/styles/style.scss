@@ -1,0 +1,51 @@
+@import "styles/defines-and-variables";
+
+header {
+  .primary {
+    box-shadow: 1px 10px 10px rgba(0,0,0,.4);
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .primary {
+    position: relative;
+    background: $primary;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    a.brand {
+      color: #fff;
+      font-size: 36px !important;
+      font-weight: bold;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0 !important;
+        }
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
+nav.page-title {
+  background: $secondary;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  .container {
+    h1 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
