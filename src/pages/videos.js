@@ -28,6 +28,7 @@ export default class Videos extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+  // List videos as sorted
   listVideos() {
     this.setState({
       videos: this.state.videos.sort((a, b) => {
@@ -49,10 +50,12 @@ export default class Videos extends React.Component {
     });
   }
 
+  // List videos mounted
   componentDidMount() {
     this.listVideos();
   }
 
+  // Sort change listener
   handleChangeSort(event) {
     this.setState({
       sortBy: event.target.value
@@ -62,22 +65,31 @@ export default class Videos extends React.Component {
     }, 500);
   }
 
+  // Search listener
   async handleSearch(event) {
     const keyword = event.target.value.length > 2 ? event.target.value : null;
     this.setState({
-      keyword,
+      keyword
     });
     setTimeout(() => {
       this.listVideos();
     }, 500);
   }
 
+  // Render UI
   render() {
-    const videos = this.state.videos.filter(video => {
-      if( this.state.keyword ) {
-        return video.title.search(new RegExp(this.state.keyword, 'i')) > -1
-      } return true;
-    }).slice(0, 21).map((video, i) => (
+    let videos = this.state.videos;
+
+    // search input
+    videos = videos.filter(video => {
+      if (this.state.keyword) {
+        return video.title.search(new RegExp(this.state.keyword, 'i')) > -1;
+      }
+      return true;
+    });
+
+    // get first 21 item and prepare UI
+    videos = videos.slice(0, 21).map((video, i) => (
       <Link href="/" key={i}>
         <div className="video">
           <img src={video.images['Poster Art'].url} loading="lazy" alt="" />
@@ -87,12 +99,17 @@ export default class Videos extends React.Component {
         </div>
       </Link>
     ));
+
     return (
       <Layout>
         <PageTitle title={`Popular ${this.props.type}`}></PageTitle>
         <div className="container filters">
           <div className="filter-input">
-            <input type="text" placeholder="Search..." onChange={this.handleSearch} />
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={this.handleSearch}
+            />
           </div>
           <div className="sorting">
             <select value={this.state.sortBy} onChange={this.handleChangeSort}>
